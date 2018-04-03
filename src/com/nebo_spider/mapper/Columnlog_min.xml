@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 这里的namespace名字必须为执行该sql的dao地址 -->
+<mapper namespace="com.nebo_spider.dao.IColumnlog_minDao">
+	<resultMap type="Columnlog_min" id="Columnlog_minResultMap">
+		<result property="com_ID" column="com_ID" />
+		<result property="tvcolunme" column="tvcolunme" />
+		<result property="tvdate" column="tvdate" />
+		<result property="tvmin" column="tvmin" />
+		<result property="avgnum" column="avgnum" />
+		<result property="reachnum" column="reachnum" />
+		<result property="tvrating" column="tvrating" />
+		<result property="reachrating" column="reachrating" />
+		<result property="marketshare" column="marketshare" />
+	</resultMap>
+	 <!-- 
+        select * from Columnlog_min where  tvdate between '2016-7-1' AND '2016-7-2'
+       -->
+    <select id="getData" resultType="Columnlog_min" resultMap="Columnlog_minResultMap">
+        select * from Columnlog_min where tvcolumn=#{tvname} AND concat(tvdate," ",tvmin) between #{startDate} AND #{endDate} 
+    </select>
+   
+   
+	
+	
+</mapper>

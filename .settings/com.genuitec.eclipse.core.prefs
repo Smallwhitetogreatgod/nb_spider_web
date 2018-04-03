@@ -1,0 +1,4 @@
+#Mon Oct 24 21:52:58 CST 2016
+eclipse.preferences.version=1
+validator.Checked=WebRoot/www/js/jquery-2.1.4.min.js,WebRoot/www/js/echarts.common.min.js,WebRoot/jQuery.js,WebRoot/www/js/jQuery.js,WebRoot/www/js/jquery-1.11.1.min.js,WebRoot/www/js/jquery-ui-1.8.17.custom.min.js,WebRoot/www/js/jquery-1.7.1.min.js
+validator.Unchecked=

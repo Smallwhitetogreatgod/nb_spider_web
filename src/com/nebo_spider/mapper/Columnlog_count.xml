@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 这里的namespace名字必须为执行该sql的dao地址 -->
+<mapper namespace="com.nebo_spider.dao.IColumnlog_countDao">
+	<resultMap type="Columnlog_count" id="columnlog_countResultMap">
+		<result property="coc_ID" column="coc_ID" />
+		<result property="tvchannel" column="tvchannel" />
+		<result property="tvdate" column="tvdate" />
+		<result property="num" column="num" />
+		<result property="timelen" column="timelen" />
+	
+	</resultMap>
+	
+    <select id="getData" resultType="Columnlog_count" resultMap="columnlog_countResultMap">
+        select * from columnlog_count where tvcolumn=#{tvname} AND tvdate between #{startDate} AND #{endDate} 
+    </select>
+	
+	
+</mapper>

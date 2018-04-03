@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="PJT"
+  id="myeclipse.1417060547263"
+  context-root="/pjt"
+  j2ee-spec="6.0"
+  archive="PJT.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

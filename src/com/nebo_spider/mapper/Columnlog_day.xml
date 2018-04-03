@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 这里的namespace名字必须为执行该sql的dao地址 -->
+<mapper namespace="com.nebo_spider.dao.IColumnlog_dayDao">
+	<resultMap type="Columnlog_day" id="columnlog_dayResultMap">
+		<result property="cod_ID" column="cod_ID" />
+		<result property="tvcolunme" column="tvcolunme" />
+		<result property="tvdate" column="tvdate" />
+		<result property="avgnum" column="avgnum" />
+		<result property="reachnum" column="reachnum" />
+		<result property="tvrating" column="tvrating" />
+		<result property="reachrating" column="reachrating" />
+		<result property="marketshare" column="marketshare" />
+		<result property="timelen" column="timelen" />
+		
+	</resultMap>
+	 <!-- 
+        select * from channellog_day where  tvdate between '2016-7-1' AND '2016-7-2'
+       -->
+    <select id="getData" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_day where tvcolumn=#{tvname} AND tvdate between #{startDate} AND #{endDate} 
+    </select>
+   
+      <select id="InitData" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a
+    </select>
+	
+	<select id="InitSort1_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY avgnum DESC
+    </select>
+     <select id="InitSort1_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY avgnum ASC
+    </select>
+     <select id="InitSort2_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+         select * from columnlog_a ORDER BY tvrating DESC
+    </select>
+     <select id="InitSort2_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+       select * from columnlog_a ORDER BY tvrating ASC
+    </select>
+     <select id="InitSort3_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+         select * from columnlog_a ORDER BY marketshare DESC
+    </select>
+     <select id="InitSort3_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY marketshare ASC 
+    </select>
+     <select id="InitSort4_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+         select * from columnlog_a ORDER BY reachnum DESC
+    </select>
+     <select id="InitSort4_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY reachnum ASC
+    </select>
+     <select id="InitSort5_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+         select * from columnlog_a ORDER BY reachrating DESC
+    </select>
+     <select id="InitSort5_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY reachrating ASC
+    </select>
+     <select id="InitSort6_1" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+         select * from columnlog_a ORDER BY timelen DESC 
+    </select>
+     <select id="InitSort6_2" resultType="Columnlog_day" resultMap="columnlog_dayResultMap">
+        select * from columnlog_a ORDER BY timelen ASC
+    </select>
+</mapper>
